@@ -10,11 +10,12 @@ body {
     align-items: center;
     height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #9633FF;
+    background-color: #f57125;
 }
 
 .form {
-    width: 400px;
+    width: 800px;
+    
     border-radius: 5px;
     background-color: white;
     /* height:fit-content;  */
@@ -36,7 +37,7 @@ input {
 
 #submit-btn {
     border: none;
-    background-color: blueviolet;
+    background-color: #f57125;
     width: 100%;
     padding: 10px 8px;
     color: white;
@@ -56,5 +57,5 @@ p {
 a {
     text-decoration: none;
     font-weight: bolder;
-    color: #9633FF;
+    color: #f57125;
 }
