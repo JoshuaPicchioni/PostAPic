@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post A Pic Signup</title>
     <link rel="stylesheet" href="../css/stylesheet.css">
+    
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
-
+    <!-- <script src="../js/auth.js"></script> -->
 </head>
 <body>
     <div class="form">
@@ -27,9 +28,9 @@
 
         
     <!---Sign up button-->
-    <button id="submit-btn"> Signup </button>
+    <button id="submit-btn" onclick="SignUp()"> Signup </button>
         
     </div>
-    
+    <script src="../js/auth.js"></script>
 </body>
 </html>
