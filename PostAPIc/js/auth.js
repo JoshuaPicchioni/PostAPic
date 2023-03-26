@@ -20,9 +20,9 @@ function SignUp() {
    const password = document.getElementById("password").value;
    console.log(email, password);
 
-   firebase.auth().createUserWithEmailAndPassword(email, password)
+   firebase.auth().createUserWithEmailAndPassword(email, password)   // code from official firebase documentation
       .then((result) => {
-         // Signed in 
+         // Signed up 
          window.alert("You are Signed Up");
          console.log(result);
          // ...
@@ -33,4 +33,24 @@ function SignUp() {
         window.alert("Error: " + error.message);
          // ..
       });
+}
+
+function SignIn() {
+   const email = document.getElementById("email").value;
+   const password = document.getElementById("password").value;
+   console.log(email, password);
+
+   firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((result) => {
+    // Signed in
+      window.alert("You are Signed In");
+      console.log(result);
+      // window.location.href = "http://
+      // ...
+  })
+  .catch((error) => {
+      console.log(error.code);
+      console.log(error.message);
+      window.alert("Error: " + error.message);
+  });
 }
