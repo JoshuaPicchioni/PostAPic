@@ -45,7 +45,7 @@ function SignIn() {
     // Signed in
       window.alert("You are Signed In");
       console.log(result);
-      window.location.href = "homepage.html";
+      window.location.href = "homepage.php";
       // ...
   })
   .catch((error) => {
