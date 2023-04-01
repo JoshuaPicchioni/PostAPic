@@ -7,13 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post A Pic</title>
     <link rel="stylesheet" href="../css/stylesheet.css">
-    <!-- <style>
-        body {
-            background-image: url('../images/background.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style> -->
     <style>
         body,
         html {
@@ -34,7 +27,7 @@
         }
 
         .bg-image {
-            background-image: url('../images/nature-3.jpg');
+            background-image: url('../images/background.jpg');
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -200,7 +193,19 @@
         </div>
         <div id="learn-more" class="learn-more">
             <h2>About Us</h2>
-            <img src="../images/nature-4.jpg" alt="About us image">
+            <img src="../images/nature-7.jpg" alt="About us image">
+            <p>
+                Joshua Picchioni - 110035605
+            </p>
+            <p>
+                Carter Buck - 110008178
+            </p>
+            <p>
+                Michael Joyce - 110035023
+            </p>
+            <p>
+                Jashanpreet Singh - 110024157
+            </p>
             <p>
                 Post A Pic is a platform where users can share their beautiful images and discover amazing content from others. Our mission is to inspire creativity and help people connect through visual storytelling.
             </p>
