@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post A Pic Signup</title>
-    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/stylesheet1.css">
     
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore-compat.js"></script>
@@ -15,7 +15,7 @@
 <body>
     
     <div class="container">
-        <h1>POST @ PIC</h1>    
+        <h1 >POST @ PIC  </h1>    
     </div>
     
     <br></br>
