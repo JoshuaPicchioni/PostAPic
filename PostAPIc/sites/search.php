@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore</title>
+    <title>Search</title>
     <link rel="stylesheet" href="../css/stylesheet.css">
     <style>
 
@@ -104,6 +104,21 @@ session_start();
             transform: rotate(-45deg);
             vertical-align: top;
         }
+
+        input[type=text] {
+            width: 100px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            transition: width 0.4s ease-in-out;
+        }
+        input[type=text]:focus {
+            width:30%;
+        }
     </style>
 </head>
 
@@ -114,8 +129,8 @@ session_start();
         <nav>
             <ul>
                 <li><a href="post.php">Post</a></li>
-                <li><a href="#">Explore</a></li>
-                <li><a href="search.php">Search</a></li>
+                <li><a href="explore.php">Explore</a></li>
+                <li><a href="#">Search</a></li>
                 <li><a href="index.php">Sign Out</a></li>
             </ul>
         </nav>
@@ -134,6 +149,12 @@ session_start();
             echo "<script>setTimeout(function() { document.querySelector('.message').style.display = 'none'; }, 3000);</script>";
         }
         ?>
+        <form style = "padding: 15px; text-align: center;" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <label for="search">Search for:</label>
+            <input type="text" id="search" name="search">
+            <input type="submit" value="Search">
+        </form>
+
         <div class="grid">
             <!-- <img src="../images/nature-1.jpg" alt="Nature 1">
             <img src="../images/nature-2.jpg" alt="Nature 2">
@@ -167,9 +188,36 @@ session_start();
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            // sql to get photos and tags
-            $sql = "SELECT * FROM photo, tag WHERE photo.id = tag.photoId";
+            /*
 
+                    <form class="search-form" action="#" method="get">
+                        <input type="text" name="search" placeholder="Search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+
+            */
+            
+    // check if the search form has been submitted
+    if (isset($_GET['search'])) {
+        $search = mysqli_real_escape_string($conn, $_GET['search']);
+        // sql to get photos and tags with matching search term
+        $sql = "SELECT DISTINCT p.*, t.* 
+        FROM photo p 
+        JOIN tag t ON p.id = t.photoId
+        WHERE t.tag1 LIKE '%$search%' OR t.tag2 LIKE '%$search%' OR t.tag3 LIKE '%$search%' OR t.tag4 LIKE '%$search%' OR t.tag5 LIKE '%$search%'";
+    } else {
+        // sql to get all photos and tags
+        $sql = "SELECT DISTINCT p.*, t.* 
+        FROM photo p 
+        JOIN tag t ON p.id = t.photoId";
+    }
+            /*
+            // sql to get photos and tags
+            $sql = "SELECT DISTINCT p.*, t.* 
+            FROM photo p 
+            JOIN tag t ON p.id = t.photoId
+            WHERE t.tag1 = 'Shrek' OR t.tag2 = 'Shrek' OR t.tag3 = 'Shrek' OR t.tag4 = 'Shrek' OR t.tag5 = 'Shrek'";   
+            */
             // executing sql query
             $result = mysqli_query($conn, $sql);
 

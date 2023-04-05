@@ -95,12 +95,7 @@
             <ul>
                 <li><a href="#">Post</a></li>
                 <li><a href="explore.php">Explore</a></li>
-                <li>
-                    <form class="search-form" action="#" method="get">
-                        <input type="text" name="search" placeholder="Search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </li>
+                  <li><a href="search.php">Search</a></li>
                 <li><a href="index.php">Sign Out</a></li>
             </ul>
         </nav>
