@@ -43,9 +43,9 @@ function SignIn() {
    firebase.auth().signInWithEmailAndPassword(email, password)
   .then((result) => {
     // Signed in
-      window.alert("You are Signed In");
+      console.log("You are Signed In");
       console.log(result);
-      window.location.href = "homepage.html";
+      window.location.href = "homepage.php";
       // ...
   })
   .catch((error) => {
